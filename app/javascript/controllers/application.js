@@ -8,5 +8,3 @@ window.Stimulus   = application
 
 export { application }
 
-
-console.log("Funcion");

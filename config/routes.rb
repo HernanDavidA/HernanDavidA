@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :models
 
   root to: "events#index"
   resources :events
