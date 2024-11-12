@@ -1,0 +1,44 @@
+<p style="color: green"><%= notice %></p>
+<% content_for :title, "Events" %>
+<div class="flex-column justify-center">
+<div class="w-full">
+<h1 class="text-3xl font-bold">Riwi Events</h1>
+</div>
+ <%= render "button_validate", button_text: "Create new event", path: new_event_path %>
+<div id="events" class="flex flex-col gap-4 "> 
+ <h2 class="text-2xl font-bold">Avaible Events</h2>
+ <% if @events.present? %>
+  <% @events.each do |event| %>
+    <%= render event %>
+    <p>
+      <%= link_to "Show this event", event %>
+    </p>
+  <% end %>
+  <% else %>
+    <p>No events</p>
+  <% end %>
+</div>  
+  <div class="w-full" id="upcoming_events">
+  <h1 class="text-3xl font-bold">Upcoming Events</h1>
+  <% if @upcoming_events.present? %>
+    <%  @upcoming_events.each do |event| %>
+      <%= render event %>
+      <p>
+        <%= link_to "Show this event", event %>
+      </p>
+  <% end %>
+  <% else %>
+    <p>No upcoming events</p>
+  <% end %>
+</div>
+<div class="w-full" id="todays_events">
+  <% @todays_events.each do |event| %>
+      <h1 class="text-3xl font-bold">Today's Events</h1>
+      <%= render event %>
+      <p>
+        <%= link_to "Show this event", event %>
+      </p>
+  <% end %>
+</div>
+
+<script src="../../javascript/controllers/application.js"></script>

@@ -1,0 +1,32 @@
+<%= form_with(model: event) do |form| %>
+  <% if event.errors.any? %>
+    <div class="bg-red-100 w-48 h-48 p-3 rounded-lg fixed bottom-4 right-4 shadow-lg flex flex-col items-center justify-center" id="error_explanation">
+      <h2 class= "text-red-500"> <strong class="text-red-800 font-bold"><%= pluralize(event.errors.count, "error") %></strong> occured </h2>
+      <ul >
+        <% event.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :date, style: "display: block" %>
+    <%= form.date_field :date %>
+  </div>
+
+  <div>
+    <%= form.label :description, style: "display: block" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+

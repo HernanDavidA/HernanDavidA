@@ -1,0 +1,6 @@
+DATABASE_NAME: events_app
+DATABASE_USER: postgres
+DATABASE_PASSWORD: hernan
+DATABASE_HOST: localhost
+DATABASE_PORT: "5432"
+
